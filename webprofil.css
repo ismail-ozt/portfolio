@@ -49,7 +49,6 @@ body {
 
 }
 
-/* Der Standard-Look (z.B. für die Nav) */
 .btn-neon {
     background-color: cyan;
     color: black;
@@ -72,7 +71,6 @@ body {
     gap: 10px;
 }
 
-/* Und beim Hovern lassen wir ihn richtig leuchten */
 .btn-github:hover {
     box-shadow: 0 0 20px whitesmoke !important;
 }
@@ -180,7 +178,6 @@ nav ul {
 
 .skill-wrapper {
     width: 100%;
-    /* Nutzt die volle Breite des Containers (hier 500px) */
 }
 
 .skills-layout-wrapper {
