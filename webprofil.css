@@ -1,4 +1,7 @@
+/* Das Basis Styling */
+
 body {
+
     background: linear-gradient(to bottom, #081326, #000000);
     background-attachment: fixed;
     min-height: 100vh;
@@ -49,6 +52,7 @@ body {
 
 }
 
+/* Der Standard-Look (z.B. für die Nav) */
 .btn-neon {
     background-color: cyan;
     color: black;
@@ -62,6 +66,7 @@ body {
 }
 
 .btn-github {
+    /* !important sorgt dafür, dass die dunkle GitHub-Farbe Vorrang hat */
     background-color: #24292e !important;
     color: whitesmoke !important;
     border-color: whitesmoke !important;
@@ -71,26 +76,23 @@ body {
     gap: 10px;
 }
 
+/* Hover-Effekt für den GitHub-Button */
 .btn-github:hover {
     box-shadow: 0 0 20px whitesmoke !important;
 }
 
+/* Größe des GitHub-Icons stabil halten */
 .btn-github svg {
     flex-shrink: 0;
-    /*garantiert, dass das Icon niemals zusammengequetscht wird.*/
 }
 
+/* Layout für die Social- und Kontakt-Links */
 .contact-links {
     display: flex;
-    /* Legt die Buttons nebeneinander */
     justify-content: center;
-    /* Zentriert sie in der Mitte der Karte */
     align-items: center;
-    /* Das löst dein Problem: Richtet beide Buttons an der Mittellinie aus! */
     gap: 20px;
-    /* Sorgt für den Abstand zwischen den Buttons */
     margin-top: 20px;
-    /* Abstand zum Text darüber */
 }
 
 /* Zusatz-Klasse für Skills */
@@ -101,7 +103,6 @@ body {
     padding: 8px 15px;
     font-size: 0.9rem;
     white-space: nowrap;
-    /* Verhindert Zeilenumbruch im Button */
 }
 
 /* Das sorgt dafür, dass die Box flacher wird und alles zentriert ist */
@@ -132,13 +133,13 @@ nav ul {
     margin: 0;
 }
 
+/* Das Styling für den geladenen Fortschrittsbalken */
 .progress-fill {
     height: 100%;
     background-color: #00ffff;
     box-shadow: 0 0 10px #00ffff;
     border-radius: 10px;
 
-    /* Wichtig für die Zentrierung der Zahl im Balken: */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,6 +148,7 @@ nav ul {
     font-weight: bold;
 }
 
+/* Das ist der graue Hintergrund-Balken für den Fortschritt */
 .progress-bar {
     width: 50%;
     height: 18px;
@@ -165,45 +167,43 @@ nav ul {
     font-weight: bold;
 }
 
+/* Der Haupt-Behälter, der alle deine Skill-Balken untereinander stapelt */
 .skills-container {
     display: flex;
     flex-direction: column;
-    /* Sorgt dafür, dass alles UNTEREINANDER steht */
     gap: 20px;
-    /* Abstand zwischen den einzelnen Skill-Blöcken */
     max-width: 500px;
-    /* Hier stellst du ein, wie breit die Balken sein sollen */
 
 }
 
+/* Sorgt dafür, dass die einzelne Skill-Box den Platz komplett ausnutzt */
 .skill-wrapper {
     width: 100%;
 }
 
+/* Richtet die Skill-Blöcke nebeneinander aus */
 .skills-layout-wrapper {
     display: flex;
     justify-content: space-between;
-    /* Schiebt die Spalten auseinander */
     gap: 40px;
-    /* Abstand zwischen den beiden Spalten */
     margin-top: 20px;
     flex-wrap: wrap;
-    /* Wichtig: Auf dem Handy stehen sie dann wieder untereinander */
 }
 
+/* Layout-Spalte für die Skill-Gruppen */
 .skills-column {
     flex: 1;
-    /* Beide Spalten sind gleich breit */
     min-width: 280px;
-    /* Verhindert, dass sie zu schmal werden */
 }
 
+/* Das Layout-Raster für deine Projekt-Boxen */
 .projects-grid {
     display: flex;
     gap: 20px;
     margin-top: 20px;
 }
 
+/* Styling für die einzelnen Projekt-Boxen */
 .project-card {
     flex: 1;
     padding: 20px;
@@ -213,35 +213,35 @@ nav ul {
     box-shadow: 0 0 5px cyan;
 }
 
+/* Hover-Effekt für die Projekt-Boxen */
 .project-card:hover {
     transform: translateY(-5px);
-    /* Die Karte hebt sich leicht an */
     border-color: cyan;
     box-shadow: 0 0 15px rgba(0, 255, 255, 06);
     transition: all 0.3s ease;
-    /* Macht die Bewegung weich */
 }
 
+/* Kennzeichnung für Projekte, die noch in Arbeit oder pausiert sind */
 .delayed {
     opacity: 0.6;
-    /* Macht die Karte etwas transparenter */
     border-style: dashed;
-    /* Verwandelt die Linie in eine gestrichelte Linie */
 }
 
+/* Styling für den Titel innerhalb einer Projekt-Box */
 .project-card h3 {
     color: white;
     margin-bottom: 10px;
 }
 
+/* Die Box für die Tech-Buttons unter dem Projekt */
 .project-tech {
     margin-top: 15px;
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    /* Falls es viele Badges werden, rutschen sie in die nächste Zeile */
 }
 
+/* Styling für die einzelnen Tech-Buttons (HTML, CSS) */
 .project-tech span {
     font-size: 0.7rem;
     color: #00ffff;
@@ -251,10 +251,9 @@ nav ul {
     background: rgba(0, 255, 255, 0.05);
     font-weight: bold;
     text-transform: uppercase;
-    /* Alles in Großbuchstaben sieht technischer aus */
 }
 
-
+/* Das Layout für die gesamte Startseite */
 #home {
     display: flex;
     flex-direction: column;
@@ -262,6 +261,7 @@ nav ul {
     text-align: center;
 }
 
+/* Styling für die Hauptüberschrift auf der Startseite */
 #home h1 {
     margin-top: 15px;
     margin-bottom: 20px;
@@ -269,11 +269,13 @@ nav ul {
     color: white;
 }
 
+/* Styling für den Einleitungstext auf der Startseite */
 #home p {
     font-size: 1.1rem;
     margin-top: 0;
 }
 
+/* Layout für die Liste im Über-mich-Bereich */
 #ueber-mich ul {
     list-style: none;
     padding: 0;
@@ -284,6 +286,7 @@ nav ul {
     margin-top: 20px;
 }
 
+/* Styling für die Bilder auf der Website */
 img {
     width: 150px;
     border-radius: 15px;
@@ -292,11 +295,12 @@ img {
     box-shadow: 0 0 7px 3px cyan;
 }
 
+/* Ausrichtung für den Kontakt-Bereich */
 #kontakt {
     text-align: center;
-    /* Zentriert Überschrift und Text */
 }
 
+/* Styling für den "Nach oben"-Button */
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -310,12 +314,12 @@ img {
     font-size: 24px;
     cursor: pointer;
     display: none;
-    /* Am Anfang unsichtbar */
     z-index: 1000;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
     transition: all 0.3s ease;
 }
 
+/* Hover-Effekt für den "Nach oben"-Button */
 .back-to-top:hover {
     background-color: #00ffff;
     color: #000;
@@ -323,6 +327,7 @@ img {
     transform: translateY(-5px);
 }
 
+/* Styling für die Fußzeile ganz unten auf der Seite */
 footer {
     padding: 30px;
     text-align: center;
@@ -331,6 +336,7 @@ footer {
     margin-top: 40px;
 }
 
+/* Layout für die Social-Media-Icons im Footer */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -338,20 +344,20 @@ footer {
     margin-top: 10px;
 }
 
-/* Responsive Design für Handys */
+/* Responsive Design für Handys oder Tablets */
 @media (max-width: 768px) {
     .nav-list {
         flex-direction: column;
-        /* Buttons untereinander statt nebeneinander */
         gap: 10px;
         align-items: center;
     }
 
+    /* Spalten-Layout für das Projekt-Raster */
     .projects-grid {
         grid-template-columns: 1fr;
-        /* Nur eine Projekt-Karte pro Zeile */
     }
 
+    /* Abstände für die einzelnen Portfolio-Karten */
     .portfolio-card {
         margin: 10px;
         padding: 15px;
