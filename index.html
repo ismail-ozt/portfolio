@@ -2,56 +2,87 @@
 <html lang="de">
 
 <head>
-    <title></title>
+    <title>Ismail Aytac Öztürk | Portfolio</title>
     <link rel="stylesheet" href="webprofil.css">
-    <meta charset=" UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
+    <!-- Quick Facts Flyout am rechten Bildschirmrand -->
+    <aside class="quick-facts-panel">
+        <button class="quick-facts-toggle" id="factsToggle" aria-label="Quick Facts umschalten">
+            <span>Quick Facts ◀</span>
+        </button>
+        <div class="quick-facts-content" id="factsContent">
+            <h3>Steckbrief</h3>
+            <ul>
+                <li><strong>Alter:</strong> 32 Jahre</li>
+                <li><strong>Familienstand:</strong> Verheiratet</li>
+                <li><strong>Standort:</strong> Region Stuttgart</li>
+                <li><strong>Status:</strong> Umschulung FI AE</li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Navigation -->
     <nav class="portfolio-card">
         <ul class="nav-list">
             <li><a href="#home" class="portfolio-btn btn-neon">Profil</a></li>
             <li><a href="#ueber-mich" class="portfolio-btn btn-neon">Über-mich</a></li>
             <li><a href="#projekte" class="portfolio-btn btn-neon">Projekte</a></li>
-            <li><a href="#kontakt" class="portfolio-btn btn-neon">kontakt</a></li>
+            <li><a href="#kontakt" class="portfolio-btn btn-neon">Kontakt</a></li>
         </ul>
     </nav>
 
-    <section id="home" class="portfolio-card">
-        <h1>Ismail Aytac Öztürk</h1>
-        <img src="ozturk-zuschnitt.jpg" alt="Profilbild von Ismail" class="profile-pic">
-        <h2>Willkommen auf meinem Portfolio.</h2>
-        <p></p>
+    <!-- Hero-Bereich (2 Spalten: Text links, Bild rechts) -->
+    <section id="home" class="portfolio-card hero-section">
+        <div class="hero-text">
+            <span class="hero-badge">Angehender Frontend-Entwickler</span>
+            <h1>Hi, ich bin <span class="gradient-text">Ismail Aytac Öztürk</span></h1>
+            <p>Leidenschaft für modernes Webdesign, sauberen Code und benutzerfreundliche Interfaces.</p>
+            <div class="hero-actions">
+                <a href="#projekte" class="portfolio-btn btn-neon">Projekte ansehen</a>
+                <a href="#kontakt" class="portfolio-btn btn-outline">Kontakt</a>
+            </div>
+        </div>
+   <img src="Ozturk b.jpg" alt="Profilbild von Ismail" class="profile-pic">
     </section>
 
+    <!-- Über-mich-Bereich mit Skills & Sprachen -->
     <section id="ueber-mich" class="portfolio-card">
         <h2>Über mich</h2>
         <p>
             Hallo, ich bin Ismail. Ich interessiere mich leidenschaftlich für die IT und absolviere
             derzeit eine Umschulung zum <strong>Fachinformatiker für Anwendungsentwicklung</strong>.
         </p>
+
         <p>
             <strong>Meine Motivation:</strong>
-        <p>Schon immer waren PCs und Konsolen mein zweites Zuhause. Mein
+        </p>
+        <p>
+            Schon immer waren PCs und Konsolen mein zweites Zuhause. Mein
             ursprünglicher Plan für die Umschulung war klar: Ich wollte Spiele entwickeln. Doch während ich tiefer in
-            die Welt der Programmierung eintauchte, passierte etwas Unerwartetes, das <b> Webdesign </b>hat mich gepackt.
-
+            die Welt der Programmierung eintauchte, passierte etwas Unerwartetes: das <b>Webdesign</b> hat mich
+            gepackt.
+        </p>
+        <p>
             Ich habe gemerkt, dass mich die direkte Verbindung von Logik und Ästhetik im Frontend fasziniert. Heute
             kombiniere ich meine Ausdauer und Begeisterung aus der Gaming-Welt mit dem Ziel, moderne und
             benutzerfreundliche Interfaces zu erschaffen. Für mich ist die IT kein Job, sondern die Chance, mein Hobby
             zum Beruf zu machen und jeden Tag etwas Neues zu lernen.
         </p>
-        </p>
+
         <p>
             <strong>Meine Ziele:</strong>
-        <p> Ich strebe eine Karriere im Bereich der
-            <strong>Frontend-Entwicklung</strong> an. Ich liebe es, moderne User Interfaces
+        </p>
+        <p>
+            Ich strebe eine Karriere im Bereich der <strong>Frontend-Entwicklung</strong> an. Ich liebe es, moderne User Interfaces
             mit CSS zu gestalten und benutzerfreundliche Web-Erlebnisse zu erschaffen.
         </p>
-        </p>
 
+        <!-- 2-Spalten-Layout für Skills und Sprachen -->
         <div class="skills-layout-wrapper">
-
             <div class="skills-column">
                 <h3>Meine Skills</h3>
 
@@ -63,21 +94,21 @@
                 </div>
 
                 <div class="skill-wrapper">
-                    <div class="skill-info"><span>JavaScript (Basics)</span></div>
+                    <div class="skill-info"><span>JavaScript (ES6+ / DOM)</span></div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 35%;"></div>
+                        <div class="progress-fill" style="width: 50%;"></div>
                     </div>
                 </div>
 
                 <div class="skill-wrapper">
-                    <div class="skill-info"><span>CSS3</span></div>
+                    <div class="skill-info"><span>CSS3 / Flexbox / Grid</span></div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 65%;"></div>
+                        <div class="progress-fill" style="width: 70%;"></div>
                     </div>
                 </div>
 
                 <div class="skill-wrapper">
-                    <div class="skill-info"><span>Problemlösung</span></div>
+                    <div class="skill-info"><span>Problemlösung & Logik</span></div>
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: 80%;"></div>
                     </div>
@@ -108,36 +139,59 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
+    <!-- Projekte-Bereich -->
     <section id="projekte" class="portfolio-card">
         <h2>Meine Projekte</h2>
 
         <div class="projects-grid">
-
+            <!-- Projekt 1: CaloTrek -->
             <div class="project-card">
-                <h3>Personal Portfolio</h3>
+                <div class="project-header">
+                    <h3>CaloTrek</h3>
+                    <span class="project-badge">Web App</span>
+                </div>
+                <p class="project-description">
+                    Interaktiver Tages-Ernährungstracker zur Ermittlung von Kalorien- und Makronährstoffzielen mit Live-Restwertberechnung und LocalStorage-Persistenz.
+                </p>
+                <div class="project-tech">
+                    <span>JavaScript (ES6+)</span>
+                    <span>HTML5</span>
+                    <span>CSS3 Grid/Flex</span>
+                    <span>LocalStorage</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://ismail-ozt.github.io/calotrek/" target="_blank" class="portfolio-btn btn-neon btn-sm">Live Demo</a>
+                    <a href="https://github.com/ismail-ozt/calotrek" target="_blank" class="portfolio-btn btn-outline btn-sm">GitHub Repo</a>
+                </div>
+            </div>
+
+            <!-- Projekt 2: Personal Portfolio -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Personal Portfolio</h3>
+                    <span class="project-badge">Website</span>
+                </div>
+                <p class="project-description">
+                    Mein persönliches Entwickler-Portfolio mit Dark-Mode-Design, interaktiven UI-Elementen und voll responsiver Gestaltung.
+                </p>
                 <div class="project-tech">
                     <span>HTML5</span>
                     <span>CSS3</span>
                     <span>Flexbox</span>
                     <span>JavaScript</span>
                 </div>
-                <P>Mein erstes Web-Projekt. Fokus auf ein modernes Dark-Mode-Design und responsives Layout. </P>
+                <div class="project-actions">
+                    <a href="#home" class="portfolio-btn btn-neon btn-sm">Aktuelle Seite</a>
+                    <a href="https://github.com/ismail-ozt" target="_blank" class="portfolio-btn btn-outline btn-sm">GitHub Profil</a>
+                </div>
             </div>
-
-            <div class="project-card delayed">
-                <h3>Nächstes Projekt: in Planung</h3>
-                <p>Nach Abschluss meines Portfolios widme ich mich der Entwicklung einer interaktiven Web-Anwendung.</p>
-            </div>
-
         </div>
     </section>
 
-    </section>
-
+    <!-- Kontakt-Bereich -->
     <section id="kontakt" class="portfolio-card">
         <h2>Kontakt</h2>
         <p>Lass uns vernetzen! Du findest mich auf diesen Plattformen:</p>
@@ -152,41 +206,41 @@
                 GitHub
             </a>
         </div>
-
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2026 Ismail Aytac Öztürk</p>
             <p>Angehender Fachinformatiker für Anwendungsentwicklung</p>
-            <div class="social-icons">
-            </div>
+            <div class="social-icons"></div>
         </div>
     </footer>
 
-    <button id="backToTop" class="back-to-top">↑</button>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Nach oben scrollen">↑</button>
 
+    <!-- JavaScript für Interaktivität -->
     <script>
-        // Wir suchen alle Links in der Navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
+        // Sanftes Scrollen zu Ankerpunkten
+        document.querySelectorAll('nav a, .hero-actions a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault(); // Verhindert den harten Standard-Sprung
-
                 const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-
-                if (targetElement) {
-                    // Berechnet die Position und scrollt sanft dorthin
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
             });
         });
-        const backToTopBtn = document.getElementById("backToTop");
 
-        // Zeigt den Button an, wenn man 300px nach unten scrollt
+        // Back-to-Top Button Steuerung
+        const backToTopBtn = document.getElementById("backToTop");
         window.onscroll = function () {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 backToTopBtn.style.display = "block";
@@ -195,12 +249,19 @@
             }
         };
 
-        // Scrollt sanft nach oben beim Klick
         backToTopBtn.addEventListener("click", function () {
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
             });
+        });
+
+        // Quick-Facts Panel Toggle
+        const factsToggle = document.getElementById('factsToggle');
+        const factsPanel = document.querySelector('.quick-facts-panel');
+
+        factsToggle.addEventListener('click', function () {
+            factsPanel.classList.toggle('open');
         });
     </script>
 </body>
