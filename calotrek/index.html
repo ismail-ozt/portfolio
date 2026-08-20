@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- Gibt dem Browser an, dass es sich um ein HTML5-Dokument handelt und die Sprache Deutsch ist -->
+<html lang="de">
+
+<head>
+    <!-- Zeichensatz UTF-8 unterstützt Umlaute wie ä, ö, ü -->
+    <meta charset="UTF-8">
+    <!-- Viewport sorgt dafür, dass die Seite auf Smartphones und Tablets korrekt skaliert (Responsive) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaloTrek | Daily Tracker</title>
+    <!-- Verknüpfung mit unserer CSS-Datei für das Design -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Hauptcontainer (zentriert den gesamten Inhalt) -->
+    <main class="app-wrapper">
+
+        <!-- Kopfbereich mit Titel und Untertitel -->
+        <header>
+            <h1>Calo<span>Trek</span></h1>
+            <p>Dein smarter Tages-Kalorientracker</p>
+        </header>
+
+        <!-- ==========================================
+             1. BEREICH: FORMULAR FÜR DAS TAGESZIEL
+             ========================================== -->
+        <section class="card">
+            <h2>1. Tagesziel festlegen</h2>
+            <form id="goalForm">
+                <div class="form-row">
+                    <!-- Eingabefeld für das Körpergewicht -->
+                    <div class="input-field">
+                        <label for="weight">Körpergewicht (kg)</label>
+                        <input type="number" id="weight" placeholder="z. B. 75" required min="30" max="250">
+                    </div>
+                    <!-- Dropdown-Auswahl für das Trainingsziel -->
+                    <div class="input-field">
+                        <label for="goal">Ziel</label>
+                        <select id="goal">
+                            <option value="cut">Abnehmen (-500 kcal)</option>
+                            <option value="hold">Gewicht halten</option>
+                            <option value="bulk" selected>Aufbauen (+300 kcal)</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Ziel berechnen</button>
+            </form>
+        </section>
+
+        <!-- ==========================================
+             2. BEREICH: TAGESBILANZ / DASHBOARD
+             (Hier werden die berechneten Restwerte angezeigt)
+             ========================================== -->
+        <section id="dashboard" class="card dashboard-card">
+            <h2>2. Heutige Tagesbilanz</h2>
+            <div class="status-grid">
+                <!-- Restkalorien-Box -->
+                <div class="status-box main-kcal">
+                    <span class="status-label">Noch übrig</span>
+                    <span class="status-val" id="remainingKcal">0</span>
+                    <span class="status-sub">von <span id="targetKcal">0</span> kcal</span>
+                </div>
+                <!-- Restprotein-Box -->
+                <div class="status-box">
+                    <span class="status-label">🥩 Protein</span>
+                    <span class="status-val" id="remainingProtein">0 g</span>
+                    <span class="status-sub">Ziel: <span id="targetProtein">0</span>g</span>
+                </div>
+                <!-- Restkohlenhydrate-Box -->
+                <div class="status-box">
+                    <span class="status-label">🍚 Carbs</span>
+                    <span class="status-val" id="remainingCarbs">0 g</span>
+                    <span class="status-sub">Ziel: <span id="targetCarbs">0</span>g</span>
+                </div>
+                <!-- Restfett-Box -->
+                <div class="status-box">
+                    <span class="status-label">🥑 Fett</span>
+                    <span class="status-val" id="remainingFats">0 g</span>
+                    <span class="status-sub">Ziel: <span id="targetFats">0</span>g</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             3. BEREICH: FORMULAR FÜR NEUE MAHLZEITEN
+             ========================================== -->
+        <section class="card">
+            <h2>3. Mahlzeit hinzufügen</h2>
+            <form id="entryForm">
+                <!-- Name des Lebensmittels -->
+                <div class="input-field">
+                    <label for="foodName">Mahlzeit / Snack</label>
+                    <input type="text" id="foodName" placeholder="z. B. Haferflocken mit Whey" required>
+                </div>
+                <!-- Nährwerteingaben im 4er-Raster -->
+                <div class="form-grid-4">
+                    <div class="input-field">
+                        <label for="foodKcal">Kalorien (kcal)</label>
+                        <input type="number" id="foodKcal" placeholder="450" required min="0">
+                    </div>
+                    <div class="input-field">
+                        <label for="foodProtein">Protein (g)</label>
+                        <input type="number" id="foodProtein" placeholder="35" min="0">
+                    </div>
+                    <div class="input-field">
+                        <label for="foodCarbs">Carbs (g)</label>
+                        <input type="number" id="foodCarbs" placeholder="50" min="0">
+                    </div>
+                    <div class="input-field">
+                        <label for="foodFats">Fett (g)</label>
+                        <input type="number" id="foodFats" placeholder="10" min="0">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-secondary">+ Eintragen</button>
+            </form>
+        </section>
+
+        <!-- ==========================================
+             4. BEREICH: LISTE DER HEUTIGEN MAHLZEITEN
+             ========================================== -->
+        <section class="card">
+            <div class="list-header">
+                <h2>Heutige Einträge</h2>
+                <!-- Button, um alle Einträge auf einmal zu löschen -->
+                <button id="resetBtn" class="btn-text">Tag zurücksetzen</button>
+            </div>
+            <!-- In diese <ul> Liste fügt JavaScript die Mahlzeiten automatisch ein -->
+            <ul id="foodList" class="food-list"></ul>
+        </section>
+    </main>
+
+    <!-- Verknüpfung mit unserer JavaScript-Datei für die Logik -->
+    <script src="app.js"></script>
+</body>
+
+</html>
