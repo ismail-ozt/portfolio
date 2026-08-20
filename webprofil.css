@@ -10,7 +10,7 @@
 /* Base-Styling & IT-Hintergrund mit Inline-SVGs und Gradienten */
 body {
     background-color: #040814;
-    background-image: 
+    background-image:
         /* Vektor-Grafiken: PC, WLAN und Platine */
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%2300ffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' opacity='0.08'%3E%3Crect x='6' y='10' width='52' height='36' rx='3'/%3E%3Cpath d='M24 46l-4 10h24l-4-10'/%3E%3Cpath d='M14 20l6 6-6 6'/%3E%3Cpath d='M26 32h14'/%3E%3Cpath d='M6 38h52'/%3E%3C/svg%3E"),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%2300ffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' opacity='0.07'%3E%3Cpath d='M10 22c13-11 31-11 44 0'/%3E%3Cpath d='M17 30c9-8 21-8 30 0'/%3E%3Cpath d='M24 38c5-5 11-5 16 0'/%3E%3Ccircle cx='32' cy='48' r='3' fill='%2300ffff'/%3E%3C/svg%3E"),
@@ -20,7 +20,7 @@ body {
         linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(180deg, #050c1b 0%, #02040a 100%);
-    background-position: 
+    background-position:
         left 4% top 15%,
         right 5% top 8%,
         right 4% bottom 12%,
@@ -28,7 +28,7 @@ body {
         center center,
         center center,
         center center;
-    background-size: 
+    background-size:
         260px 260px,
         220px 220px,
         280px 280px,
@@ -223,22 +223,27 @@ nav.portfolio-card {
 
 /* Profilbild mit 3:4-Verhältnis und Glow */
 .profile-pic {
-    width: 210px;
-    height: 270px;
-    border-radius: 20px;
+    width: 170px;
+    height: 220px;
     object-fit: cover;
-    object-position: center 10%;
-    border: 2px solid #00ffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 
-                0 0 20px rgba(0, 255, 255, 0.35);
-    background-color: #0f172a;
+    object-position: center top;
+    border-radius: 12px;
+    border: 1.5px solid #00ffff;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.35);
+    display: block;
+
+    /* GPU-Fixierung für dauerhafte Schärfe */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform, box-shadow;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-pic:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 
-                0 0 28px rgba(0, 255, 255, 0.6);
+    /* Wichtig: translateZ(0) immer mitgeben, damit kein Weichzeichner entsteht! */
+    transform: translateY(-4px) translateZ(0);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8),
+        0 0 28px rgba(0, 255, 255, 0.6);
 }
 
 /* ==========================================================================
@@ -508,7 +513,7 @@ footer {
 /* Mobile Breakpoint für Tablets & Smartphones */
 @media (max-width: 768px) {
     body {
-        background-size: 
+        background-size:
             160px 160px,
             140px 140px,
             180px 180px,
@@ -516,7 +521,7 @@ footer {
             30px 30px,
             30px 30px,
             100% 100%;
-        background-position: 
+        background-position:
             left 2% top 8%,
             right 2% top 4%,
             right 2% bottom 6%,
