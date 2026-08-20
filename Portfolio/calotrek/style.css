@@ -1,0 +1,354 @@
+/* ==========================================================
+   1. GLOBALE BASIS-EINSTELLUNGEN
+   ========================================================== */
+
+/* Sorgt dafür, dass Padding und Border sauber in der Elementbreite bleiben */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Hintergrund: Tiefer Schwarz-Grau-Farbverlauf mit dezenten weißen Hantel-Konturen */
+body {
+    background-color: #0d0e12;
+    background-image:
+        /* 1. Hantel links oben in feinem Weiß */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' opacity='0.05'%3E%3Cpath d='m6.5 6.5 11 11'/%3E%3Cpath d='m21 21-1-1'/%3E%3Cpath d='m3 3 1 1'/%3E%3Cpath d='m18 22 4-4'/%3E%3Cpath d='m2 6 4-4'/%3E%3Cpath d='m3 10 7-7'/%3E%3Cpath d='m14 21 7-7'/%3E%3C/svg%3E"),
+        /* 2. Hantel rechts unten in feinem Weiß */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' opacity='0.05'%3E%3Cpath d='m6.5 6.5 11 11'/%3E%3Cpath d='m21 21-1-1'/%3E%3Cpath d='m3 3 1 1'/%3E%3Cpath d='m18 22 4-4'/%3E%3Cpath d='m2 6 4-4'/%3E%3Cpath d='m3 10 7-7'/%3E%3Cpath d='m14 21 7-7'/%3E%3C/svg%3E"),
+        /* 3. Zentraler sanfter Lichtschein in Hellgrau/Weiß */
+        radial-gradient(circle at 50% 15%, rgba(255, 255, 255, 0.08) 0%, transparent 60%),
+        /* 4. Fließender Verlauf von Dunkelgrau zu tiefem Schwarz */
+        linear-gradient(145deg, #181a20 0%, #0c0d10 60%, #000000 100%);
+    background-position:
+        left 5% top 12%,
+        right 5% bottom 12%,
+        center center,
+        center center;
+    background-size:
+        240px 240px,
+        260px 260px,
+        100% 100%,
+        100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #e2e8f0;
+    min-height: 100vh;
+    padding: 20px 15px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Hauptcontainer für die gesamte App */
+.app-wrapper {
+    width: 100%;
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Header-Styling */
+header {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+}
+
+/* Weißer Akzent im Titel */
+header h1 span {
+    color: #cbd5e1;
+    font-weight: 300;
+}
+
+header p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+/* ==========================================================
+   2. KARTEN & FORMULARE (CARDS & INPUTS)
+   ========================================================== */
+
+/* Karte mit dezentem Schwarz-Grau-Farbverlauf und weißer Kontur */
+.card {
+    background: linear-gradient(160deg, rgba(30, 32, 40, 0.92) 0%, rgba(15, 16, 20, 0.95) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+h2 {
+    font-size: 1.15rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+}
+
+/* 2 Spalten nebeneinander im Formular */
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+/* 4 Spalten nebeneinander für die Nährwert-Eingaben */
+.form-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Gruppierung von Label und Input */
+.input-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+/* Styling für Textfelder, Dropdowns und Nummernfelder */
+input,
+select {
+    background: #0f1014;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+/* Fokus: Weißer Glanzrand beim Anklicken */
+input:focus,
+select:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+}
+
+/* ==========================================================
+   3. BUTTONS (MONOCHROM WEISS / GRAU)
+   ========================================================== */
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+/* Primärer Button: Solides Weiß mit schwarzer Schrift */
+.btn-primary {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* Sekundärer Button: Schwarzer Hintergrund mit weißem Rahmen */
+.btn-secondary {
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    color: #ffffff;
+}
+
+/* Hover-Effekte */
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background: #f1f5f9;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
+
+/* ==========================================================
+   4. DASHBOARD-STATUSBOXEN (RESTBUDGET)
+   ========================================================== */
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.status-box {
+    background: #0f1014;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 12px 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Haupt-Kalorienbox mit weißer Betonung */
+.status-box.main-kcal {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(15, 16, 20, 0.9) 100%);
+}
+
+.status-label {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.status-val {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.status-sub {
+    font-size: 0.7rem;
+    color: #64748b;
+    margin-top: 3px;
+}
+
+/* ==========================================================
+   5. MAHLZEITEN-LISTE
+   ========================================================== */
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: #f87171;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-decoration: underline;
+}
+
+.food-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.food-item {
+    background: #0f1014;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.food-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.food-title {
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #ffffff;
+}
+
+.food-macros {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #64748b;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.2s;
+}
+
+.delete-btn:hover {
+    color: #f87171;
+}
+
+/* ==========================================================
+   6. RESPONSIVE DESIGN (MOBIL & TABLET)
+   ========================================================== */
+
+/* Tablets & mittlere Screens */
+@media (max-width: 768px) {
+    body {
+        background-size: 180px 180px, 190px 190px, 100% 100%, 100% 100%;
+        background-position: left 2% top 8%, right 2% bottom 8%, center center, center center;
+    }
+}
+
+/* Smartphones (Handys) */
+@media (max-width: 600px) {
+    body {
+        padding: 15px 10px;
+        background-size: 120px 120px, 130px 130px, 100% 100%, 100% 100%;
+        background-position: left -20px top 5%, right -20px bottom 5%, center center, center center;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Formularfelder untereinander anordnen */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* 4er-Raster wird zum 2x2 Raster */
+    .form-grid-4 {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    /* Status-Kacheln 2x2 anordnen */
+    .status-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .status-val {
+        font-size: 1.1rem;
+    }
+}
