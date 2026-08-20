@@ -2,20 +2,16 @@
    1. GLOBAL RESET & CYBER-HINTERGRUND
    ========================================================================== */
 
-/* Box-Model-Fix: Padding & Border in Elementbreite einberechnen */
 * {
     box-sizing: border-box;
 }
 
-/* Base-Styling & IT-Hintergrund mit Inline-SVGs und Gradienten */
 body {
     background-color: #040814;
     background-image:
-        /* Vektor-Grafiken: PC, WLAN und Platine */
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%2300ffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' opacity='0.08'%3E%3Crect x='6' y='10' width='52' height='36' rx='3'/%3E%3Cpath d='M24 46l-4 10h24l-4-10'/%3E%3Cpath d='M14 20l6 6-6 6'/%3E%3Cpath d='M26 32h14'/%3E%3Cpath d='M6 38h52'/%3E%3C/svg%3E"),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%2300ffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' opacity='0.07'%3E%3Cpath d='M10 22c13-11 31-11 44 0'/%3E%3Cpath d='M17 30c9-8 21-8 30 0'/%3E%3Cpath d='M24 38c5-5 11-5 16 0'/%3E%3Ccircle cx='32' cy='48' r='3' fill='%2300ffff'/%3E%3C/svg%3E"),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%2300ffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' opacity='0.08'%3E%3Cpath d='M8 12h16l10 10v20l8 8h14'/%3E%3Ccircle cx='8' cy='12' r='3' fill='%2300ffff'/%3E%3Ccircle cx='56' cy='50' r='3' fill='%2300ffff'/%3E%3Cpath d='M56 16H42L32 26v12'/%3E%3Ccircle cx='56' cy='16' r='3' fill='%2300ffff'/%3E%3Cpath d='M16 54h14l8-8'/%3E%3Ccircle cx='16' cy='54' r='3' fill='%2300ffff'/%3E%3C/svg%3E"),
-        /* Lichtschein & Dev-Grid Raster */
         radial-gradient(circle at 50% 10%, rgba(0, 255, 255, 0.12) 0%, transparent 60%),
         linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px),
@@ -49,7 +45,6 @@ body {
    2. KARTEN-CONTAINER (GLASSMORPHISM)
    ========================================================================== */
 
-/* Zentrale Inhaltskarten mit Rahmen und Blur-Effekt */
 .portfolio-card {
     max-width: 900px;
     margin: 40px auto;
@@ -77,7 +72,6 @@ body {
    3. NAVIGATION
    ========================================================================== */
 
-/* Horizontale Menüleiste per Flexbox */
 nav.portfolio-card {
     padding: 15px;
     display: flex;
@@ -100,13 +94,12 @@ nav.portfolio-card {
    4. BUTTON-KOMPONENTEN
    ========================================================================== */
 
-/* Basis-Button mit Transition für flüssige Hover-Animation */
 .portfolio-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-width: 130px;
-    padding: 0px 15px;
+    padding: 0 15px;
     height: 36px;
     border-radius: 25px;
     font-weight: bold;
@@ -117,7 +110,6 @@ nav.portfolio-card {
     font-size: 0.9rem;
 }
 
-/* Kompakte Button-Variante für Projekt-Links */
 .btn-sm {
     min-width: 110px;
     height: 32px;
@@ -125,13 +117,11 @@ nav.portfolio-card {
     padding: 0 12px;
 }
 
-/* Primärer Neon-Button */
 .btn-neon {
     background-color: cyan;
     color: black;
 }
 
-/* Sekundärer Rahmen-Button */
 .btn-outline {
     background: transparent;
     color: #00ffff;
@@ -150,7 +140,6 @@ nav.portfolio-card {
     filter: brightness(1.15);
 }
 
-/* Externer GitHub-Button */
 .btn-github {
     background-color: #24292e !important;
     color: whitesmoke !important;
@@ -162,7 +151,6 @@ nav.portfolio-card {
    5. HERO-BEREICH (2-SPALTEN-LAYOUT)
    ========================================================================== */
 
-/* Flex-Container für Intro-Text und Profilbild */
 .hero-section {
     display: flex;
     flex-direction: row;
@@ -177,7 +165,6 @@ nav.portfolio-card {
     flex: 1.4;
 }
 
-/* Status-Badge */
 .hero-badge {
     display: inline-block;
     color: #00ffff;
@@ -199,7 +186,6 @@ nav.portfolio-card {
     color: white;
 }
 
-/* Text-Farbverlauf via Background-Clip */
 .gradient-text {
     background: linear-gradient(90deg, #00ffff, #38bdf8);
     background-clip: text;
@@ -221,7 +207,6 @@ nav.portfolio-card {
     align-items: center;
 }
 
-/* Profilbild mit 3:4-Verhältnis und Glow */
 .profile-pic {
     width: 170px;
     height: 220px;
@@ -232,7 +217,6 @@ nav.portfolio-card {
     box-shadow: 0 0 12px rgba(0, 255, 255, 0.35);
     display: block;
 
-    /* GPU-Fixierung für dauerhafte Schärfe */
     transform: translateZ(0);
     backface-visibility: hidden;
     will-change: transform, box-shadow;
@@ -240,7 +224,6 @@ nav.portfolio-card {
 }
 
 .profile-pic:hover {
-    /* Wichtig: translateZ(0) immer mitgeben, damit kein Weichzeichner entsteht! */
     transform: translateY(-4px) translateZ(0);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8),
         0 0 28px rgba(0, 255, 255, 0.6);
@@ -250,7 +233,6 @@ nav.portfolio-card {
    6. SKILLS & FORTSCHRITTSBALKEN
    ========================================================================== */
 
-/* Spalten-Layout für Fachkenntnisse und Sprachen */
 .skills-layout-wrapper {
     display: flex;
     justify-content: space-between;
@@ -284,7 +266,6 @@ nav.portfolio-card {
     font-size: 0.9rem;
 }
 
-/* Fortschrittsbalken-Hintergrund */
 .progress-bar {
     width: 100%;
     height: 14px;
@@ -293,7 +274,6 @@ nav.portfolio-card {
     overflow: hidden;
 }
 
-/* Dynamische Füllung mit Neon-Leuchten */
 .progress-fill {
     height: 100%;
     background-color: #00ffff;
@@ -302,17 +282,16 @@ nav.portfolio-card {
 }
 
 /* ==========================================================================
-   7. PROJEKT-KARTEN
+   7. PROJEKT- & ZERTIFIKATSKARTEN (FLEXBOX-ALIGNMENT)
    ========================================================================== */
 
-/* Flexbox-Raster für Projektübersicht */
 .projects-grid {
     display: flex;
     gap: 20px;
     margin-top: 20px;
+    align-items: stretch;
 }
 
-/* Einzelne Projektkarte */
 .project-card {
     flex: 1;
     padding: 22px;
@@ -322,7 +301,7 @@ nav.portfolio-card {
     box-shadow: 0 0 8px rgba(0, 255, 255, 0.15);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    height: 100%;
     transition: all 0.3s ease;
 }
 
@@ -335,34 +314,39 @@ nav.portfolio-card {
 .project-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    min-height: 48px;
 }
 
 .project-header h3 {
     margin: 0;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 1.3;
 }
 
 .project-badge {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     color: #00ffff;
     background: rgba(0, 255, 255, 0.1);
     border: 1px solid rgba(0, 255, 255, 0.3);
     padding: 2px 8px;
     border-radius: 10px;
     font-weight: bold;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .project-description {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.5;
     color: #cbd5e1;
     margin-bottom: 15px;
+    flex-grow: 1;
 }
 
-/* Tech-Stack Badges */
 .project-tech {
     display: flex;
     gap: 8px;
@@ -390,6 +374,7 @@ nav.portfolio-card {
 /* ==========================================================================
    8. KONTAKT & FOOTER
    ========================================================================== */
+
 #kontakt {
     text-align: center;
 }
@@ -403,7 +388,6 @@ nav.portfolio-card {
     flex-wrap: wrap;
 }
 
-/* Scroll-to-Top Floating Button */
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -441,7 +425,6 @@ footer {
    9. QUICK-FACTS FLYOUT (SIDEBAR)
    ========================================================================== */
 
-/* Einklappbare Seitenleiste per Transform */
 .quick-facts-panel {
     position: fixed;
     top: 200px;
@@ -510,7 +493,6 @@ footer {
    10. RESPONSIVE DESIGN (MEDIA QUERIES)
    ========================================================================== */
 
-/* Mobile Breakpoint für Tablets & Smartphones */
 @media (max-width: 768px) {
     body {
         background-size:
@@ -532,7 +514,6 @@ footer {
         padding: 10px;
     }
 
-    /* Hero-Bereich auf mobilen Geräten vertikal stapeln */
     .hero-section {
         flex-direction: column-reverse;
         text-align: center;

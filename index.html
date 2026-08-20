@@ -2,42 +2,40 @@
 <html lang="de">
 
 <head>
-    <title>Ismail Aytac Öztürk | Portfolio</title>
-    <link rel="stylesheet" href="webprofil.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+    <title>Ismail Aytac Öztürk – Portfolio</title>
+    <link rel="stylesheet" href="webprofil.css?v=123">
 
 <body>
-    <!-- Quick Facts Flyout am rechten Bildschirmrand -->
-    <aside class="quick-facts-panel">
-        <button class="quick-facts-toggle" id="factsToggle" aria-label="Quick Facts umschalten">
-            <span>Quick Facts ◀</span>
-        </button>
-        <div class="quick-facts-content" id="factsContent">
-            <h3>Steckbrief</h3>
-            <ul>
-                <li><strong>Alter:</strong> 32 Jahre</li>
-                <li><strong>Familienstand:</strong> Verheiratet</li>
-                <li><strong>Standort:</strong> Region Stuttgart</li>
-                <li><strong>Status:</strong> Umschulung FI AE</li>
-            </ul>
-        </div>
-    </aside>
 
     <!-- Navigation -->
     <nav class="portfolio-card">
         <ul class="nav-list">
-            <li><a href="#home" class="portfolio-btn btn-neon">Profil</a></li>
-            <li><a href="#ueber-mich" class="portfolio-btn btn-neon">Über-mich</a></li>
-            <li><a href="#projekte" class="portfolio-btn btn-neon">Projekte</a></li>
-            <li><a href="#zertifikate" class="portfolio-btn btn-neon">Zertifikate</a></li>
-            <li><a href="#kontakt" class="portfolio-btn btn-neon">Kontakt</a></li>
+            <li><a href="#profil" class="portfolio-btn btn-neon btn-sm">Profil</a></li>
+            <li><a href="#ueber-mich" class="portfolio-btn btn-neon btn-sm">Über-mich</a></li>
+            <li><a href="#projekte" class="portfolio-btn btn-neon btn-sm">Projekte</a></li>
+            <li><a href="#zertifikate" class="portfolio-btn btn-neon btn-sm">Zertifikate</a></li>
+            <li><a href="#kontakt" class="portfolio-btn btn-neon btn-sm">Kontakt</a></li>
         </ul>
     </nav>
 
-    <!-- Hero-Bereich (2 Spalten: Text links, Bild rechts) -->
-    <section id="home" class="portfolio-card hero-section">
+    <!-- Quick-Facts Flyout -->
+    <div class="quick-facts-panel" id="quickFactsPanel">
+        <button class="quick-facts-toggle" id="quickFactsToggle">Quick Facts ◀</button>
+        <div class="quick-facts-content">
+            <h3>Quick Facts</h3>
+            <ul>
+                <li><strong>Rolle:</strong> Fachinformatiker AE</li>
+                <li><strong>Schwerpunkt:</strong> Frontend & Webdesign</li>
+                <li><strong>Stack:</strong> HTML5, CSS3, JS, PHP</li>
+                <li><strong>Status:</strong> Umschulung / Bewerbungsphase</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero / Profil-Bereich -->
+    <section id="profil" class="portfolio-card hero-section">
         <div class="hero-text">
             <span class="hero-badge">Angehender Frontend-Entwickler</span>
             <h1>Hi, ich bin <span class="gradient-text">Ismail Aytac Öztürk</span></h1>
@@ -47,25 +45,24 @@
                 <a href="#kontakt" class="portfolio-btn btn-outline">Kontakt</a>
             </div>
         </div>
-        <img src="ozturk-zuschnitt.jpg?v=2" alt="Profilbild von Ismail" class="profile-pic">
+        <div class="hero-image-wrapper">
+            <img src="ozturk-zuschnitt.jpg" alt="Ismail Aytac Öztürk" class="profile-pic">
+        </div>
     </section>
 
-    <!-- Über-mich-Bereich mit Skills & Sprachen -->
+    <!-- Über-mich-Bereich -->
     <section id="ueber-mich" class="portfolio-card">
         <h2>Über mich</h2>
         <p>
-            Hallo, ich bin Ismail. Ich interessiere mich leidenschaftlich für die IT und absolviere
-            derzeit eine Umschulung zum <strong>Fachinformatiker für Anwendungsentwicklung</strong>.
+            Hallo, ich bin Ismail. Ich interessiere mich leidenschaftlich für die IT und absolviere derzeit eine
+            Umschulung zum <strong>Fachinformatiker für Anwendungsentwicklung</strong>.
         </p>
 
+        <p><strong>Meine Motivation:</strong></p>
         <p>
-            <strong>Meine Motivation:</strong>
-        </p>
-        <p>
-            Schon immer waren PCs und Konsolen mein zweites Zuhause. Mein
-            ursprünglicher Plan für die Umschulung war klar: Ich wollte Spiele entwickeln. Doch während ich tiefer in
-            die Welt der Programmierung eintauchte, passierte etwas Unerwartetes: das <b>Webdesign</b> hat mich
-            gepackt.
+            Schon immer waren PCs und Konsolen mein zweites Zuhause. Mein ursprünglicher Plan für die Umschulung war
+            klar: Ich wollte Spiele entwickeln. Doch während ich tiefer in die Welt der Programmierung eintauchte,
+            passierte etwas Unerwartetes: das <strong>Webdesign</strong> hat mich gepackt.
         </p>
         <p>
             Ich habe gemerkt, dass mich die direkte Verbindung von Logik und Ästhetik im Frontend fasziniert. Heute
@@ -74,125 +71,75 @@
             zum Beruf zu machen und jeden Tag etwas Neues zu lernen.
         </p>
 
-        <p>
-            <strong>Meine Ziele:</strong>
-        </p>
+        <p><strong>Meine Ziele:</strong></p>
         <p>
             Ich strebe eine Karriere im Bereich der <strong>Frontend-Entwicklung</strong> an. Ich liebe es, moderne User
-            Interfaces
-            mit CSS zu gestalten und benutzerfreundliche Web-Erlebnisse zu erschaffen.
+            Interfaces zu bauen und mich kontinuierlich in neuen Technologien zu vertiefen.
         </p>
 
-        <!-- 2-Spalten-Layout für Skills und Sprachen -->
+        <!-- Skills-Bereich -->
         <div class="skills-layout-wrapper">
             <div class="skills-column">
-                <h3>Meine Skills</h3>
+                <h3>Fachkenntnisse</h3>
 
                 <div class="skill-wrapper">
-                    <div class="skill-info"><span>HTML5</span></div>
+                    <div class="skill-info"><span>HTML5 / CSS3</span><span>90%</span></div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 75%;"></div>
+                        <div class="progress-fill" style="width: 90%;"></div>
                     </div>
                 </div>
 
                 <div class="skill-wrapper">
-                    <div class="skill-info"><span>JavaScript (ES6+ / DOM)</span></div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 50%;"></div>
-                    </div>
-                </div>
-
-                <div class="skill-wrapper">
-                    <div class="skill-info"><span>CSS3 / Flexbox / Grid</span></div>
+                    <div class="skill-info"><span>JavaScript</span><span>70%</span></div>
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: 70%;"></div>
                     </div>
                 </div>
 
                 <div class="skill-wrapper">
-                    <div class="skill-info"><span>Problemlösung & Logik</span></div>
+                    <div class="skill-info"><span>Python</span><span>75%</span></div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 80%;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skills-column">
-                <h3>Sprachen</h3>
-
-                <div class="skill-wrapper">
-                    <div class="skill-info"><span>Deutsch</span></div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 100%;"></div>
+                        <div class="progress-fill" style="width: 75%;"></div>
                     </div>
                 </div>
 
                 <div class="skill-wrapper">
-                    <div class="skill-info"><span>Türkisch</span></div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 100%;"></div>
-                    </div>
-                </div>
-
-                <div class="skill-wrapper">
-                    <div class="skill-info"><span>Englisch</span></div>
+                    <div class="skill-info"><span>Java / OOP</span><span>65%</span></div>
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: 65%;"></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Projekte-Bereich -->
-    <section id="projekte" class="portfolio-card">
-        <h2>Meine Projekte</h2>
+            <div class="skills-column">
+                <h3>Sprachen & Tools</h3>
 
-        <div class="projects-grid">
-            <!-- Projekt 1: CaloTrek -->
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>CaloTrek</h3>
-                    <span class="project-badge">Web App</span>
+                <div class="skill-wrapper">
+                    <div class="skill-info"><span>Deutsch (Muttersprache)</span><span>100%</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
                 </div>
-                <p class="project-description">
-                    Interaktiver Tages-Ernährungstracker zur Ermittlung von Kalorien- und Makronährstoffzielen mit
-                    Live-Restwertberechnung und LocalStorage-Persistenz.
-                </p>
-                <div class="project-tech">
-                    <span>JavaScript (ES6+)</span>
-                    <span>HTML5</span>
-                    <span>CSS3 Grid/Flex</span>
-                    <span>LocalStorage</span>
-                </div>
-                <div class="project-actions">
-                    <a href="https://ismail-ozt.github.io/calotrek/" target="_blank"
-                        class="portfolio-btn btn-neon btn-sm">Live Demo</a>
-                    <a href="https://github.com/ismail-ozt/calotrek" target="_blank"
-                        class="portfolio-btn btn-outline btn-sm">GitHub Repo</a>
-                </div>
-            </div>
 
-            <!-- Projekt 2: Personal Portfolio -->
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>Personal Portfolio</h3>
-                    <span class="project-badge">Website</span>
+                <div class="skill-wrapper">
+                    <div class="skill-info"><span>Türkisch (Muttersprache)</span><span>100%</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
                 </div>
-                <p class="project-description">
-                    Mein persönliches Entwickler-Portfolio mit Dark-Mode-Design, interaktiven UI-Elementen und voll
-                    responsiver Gestaltung.
-                </p>
-                <div class="tech-stack project-tech">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>Flexbox</span>
-                    <span>JavaScript</span>
+
+                <div class="skill-wrapper">
+                    <div class="skill-info"><span>Englisch (Gute Kenntnisse)</span><span>75%</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%;"></div>
+                    </div>
                 </div>
-                <div class="project-actions">
-                    <a href="#home" class="portfolio-btn btn-neon btn-sm">Aktuelle Seite</a>
-                    <a href="https://github.com/ismail-ozt" target="_blank"
-                        class="portfolio-btn btn-outline btn-sm">GitHub Profil</a>
+
+                <div class="skill-wrapper">
+                    <div class="skill-info"><span>Git / GitHub</span><span>80%</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%;"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -203,23 +150,62 @@
         <h2>Zertifikate & Qualifikationen</h2>
 
         <div class="projects-grid">
-            <!-- PCEP Python Zertifikat -->
+            <!-- 1. PCEP Python Zertifikat -->
             <div class="project-card">
                 <div class="project-header">
-                    <h3>PCEP™ – Certified Entry-Level Python</h3>
+                    <h3>PCEP™ Python</h3>
                     <span class="project-badge">Zertifikat</span>
                 </div>
                 <p class="project-description">
-                    Offizieller Nachweis des Python Institute über fundierte Kenntnisse in prozeduraler und
-                    objektorientierter Programmierung, Datenstrukturen, Kontrollstrukturen und logischem Problemlösen.
+                    Offizieller Nachweis über fundierte Kenntnisse in prozeduraler und objektorientierter
+                    Programmierung, Datenstrukturen, Kontrollstrukturen und logischem Problemlösen.
                 </p>
                 <div class="project-tech">
                     <span>Python 3</span>
                     <span>PCEP-30-02</span>
-                    <span>Python Institute</span>
                 </div>
                 <div class="project-actions">
                     <a href="python-zertifikat.pdf" target="_blank" rel="noopener noreferrer"
+                        class="portfolio-btn btn-neon btn-sm">Zertifikat ansehen (PDF) ↗</a>
+                </div>
+            </div>
+
+            <!-- 2. GFN OOP & Java Zertifikat -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>OOP & Java</h3>
+                    <span class="project-badge">GFN (180 UE)</span>
+                </div>
+                <p class="project-description">
+                    Fundierte Weiterbildung in objektorientiertem Softwaredesign (OOA/OOD), praktischer Umsetzung mit
+                    Java, Softwaremodellierung via UML sowie relationalen Datenbanken.
+                </p>
+                <div class="project-tech">
+                    <span>Java / OOP</span>
+                    <span>UML & SQL</span>
+                </div>
+                <div class="project-actions">
+                    <a href="gfn-oop-zertifikat.pdf" target="_blank" rel="noopener noreferrer"
+                        class="portfolio-btn btn-neon btn-sm">Zertifikat ansehen (PDF) ↗</a>
+                </div>
+            </div>
+
+            <!-- 3. GFN KI Zertifikat -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Künstliche Intelligenz</h3>
+                    <span class="project-badge">GFN Weiterbildung</span>
+                </div>
+                <p class="project-description">
+                    Zertifizierter Nachweis über Funktionsweisen moderner KI-Technologien sowie praxisnahe Kompetenzen
+                    zu Chancen, Risiken, rechtlichen Rahmenbedingungen und Datenschutz.
+                </p>
+                <div class="project-tech">
+                    <span>Prompting & KI</span>
+                    <span>Datenschutz</span>
+                </div>
+                <div class="project-actions">
+                    <a href="gfn-ki-zertifikat.pdf" target="_blank" rel="noopener noreferrer"
                         class="portfolio-btn btn-neon btn-sm">Zertifikat ansehen (PDF) ↗</a>
                 </div>
             </div>
@@ -231,51 +217,23 @@
         <h2>Kontakt</h2>
         <p>Lass uns vernetzen! Du findest mich auf diesen Plattformen:</p>
         <div class="contact-links">
-            <a href="mailto:ismail.a.ozturk@gmail.com" class="portfolio-btn btn-neon">E-Mail senden</a>
-            <a href="https://github.com/ismail-ozt" target="_blank" class="portfolio-btn btn-neon btn-github">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                </svg>
-                GitHub
-            </a>
+            <a href="mailto:deine-email@example.com" class="portfolio-btn btn-neon">E-Mail senden</a>
+            <a href="https://github.com/ismail-ozt" target="_blank" rel="noopener noreferrer"
+                class="portfolio-btn btn-github">GitHub</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Ismail Aytac Öztürk</p>
-            <p>Angehender Fachinformatiker für Anwendungsentwicklung</p>
-            <div class="social-icons"></div>
-        </div>
+        <p>© 2026 Ismail Aytac Öztürk. Alle Rechte vorbehalten.</p>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" aria-label="Nach oben scrollen">↑</button>
+    <!-- Back-to-Top Button -->
+    <button class="back-to-top" id="backToTopBtn" title="Nach oben">↑</button>
 
-    <!-- JavaScript für Interaktivität -->
     <script>
-        // Sanftes Scrollen zu Ankerpunkten
-        document.querySelectorAll('nav a, .hero-actions a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const targetId = this.getAttribute('href');
-                if (targetId.startsWith('#')) {
-                    e.preventDefault();
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
-        });
-
-        // Back-to-Top Button Steuerung
-        const backToTopBtn = document.getElementById("backToTop");
+        // Back to top Button Logik
+        const backToTopBtn = document.getElementById('backToTopBtn');
         window.onscroll = function () {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 backToTopBtn.style.display = "block";
@@ -283,20 +241,15 @@
                 backToTopBtn.style.display = "none";
             }
         };
-
-        backToTopBtn.addEventListener("click", function () {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Quick-Facts Panel Toggle
-        const factsToggle = document.getElementById('factsToggle');
-        const factsPanel = document.querySelector('.quick-facts-panel');
-
-        factsToggle.addEventListener('click', function () {
-            factsPanel.classList.toggle('open');
+        // Quick Facts Toggle
+        const panel = document.getElementById('quickFactsPanel');
+        const toggleBtn = document.getElementById('quickFactsToggle');
+        toggleBtn.addEventListener('click', () => {
+            panel.classList.toggle('open');
         });
     </script>
 </body>
